@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <RelativeLayout
+            android:id="@+id/listFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+            <LinearLayout
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true">
+                <FrameLayout
+                    android:id="@+id/frame_product"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/bottom_navigation"
+                    android:layout_below="@+id/header"
+                    />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/upsert_form"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/fab_margin"
+                >
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@mipmap/tivi_new"
+                    android:scaleType="fitXY"
+                    />
+                <TextView
+                    style="@style/label"
+                    android:id="@+id/lbl_name"
+                    android:layout_below="@+id/img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name: "
+                    />
+                <TextView
+                    style="@style/label"
+                    android:id="@+id/content_lbl_name"
+                    android:layout_below="@+id/img"
+                    android:layout_toRightOf="@+id/lbl_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tivi "
+                    />
+                <TextView
+                    style="@style/label"
+                    android:id="@+id/lbl_price"
+                    android:layout_below="@+id/lbl_name"
+                    android:textColor="@color/colorAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Price: "
+                    />
+                <TextView
+                    style="@style/label"
+                    android:textColor="@color/colorAccent"
+                    android:id="@+id/content_lbl_price"
+                    android:layout_below="@+id/content_lbl_name"
+                    android:layout_toRightOf="@+id/lbl_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="80000000 "
+                    />
+                <android.support.design.button.MaterialButton
+                    android:id="@+id/btn_order"
+                    android:layout_below="@+id/lbl_price"
+                    android:layout_centerInParent="true"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Order"
+                    android:textColor="#fff"
+                    android:textStyle="bold"
+                    app:cornerRadius="16dp" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+</android.support.design.widget.CoordinatorLayout>

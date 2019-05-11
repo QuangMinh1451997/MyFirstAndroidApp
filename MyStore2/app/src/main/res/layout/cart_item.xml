@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+    <android.support.design.card.MaterialCardView
+        style="@style/Widget.MaterialComponents.CardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/fab_margin"
+        android:layout_margin="5dp">
+
+        <!-- Card contents. -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/fab_margin"
+            >
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@mipmap/tivi_new"
+                android:scaleType="fitXY"
+                />
+            <!--  Name -->
+            <TextView
+                style="@style/label"
+                android:id="@+id/lbl_name"
+                android:layout_toRightOf="@+id/img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Product Name: "
+                />
+            <TextView
+                android:id="@+id/content_lbl_name"
+                style="@style/contentLabel"
+                android:layout_toRightOf="@id/lbl_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Product Name 1"
+                />
+
+            <!--  Price -->
+            <TextView
+                style="@style/label"
+                android:id="@+id/lbl_price"
+                android:layout_below="@id/lbl_name"
+                android:layout_toRightOf="@+id/img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price: "
+                />
+            <TextView
+                android:id="@+id/content_lbl_price"
+                style="@style/contentLabel"
+                android:layout_below="@id/lbl_name"
+                android:layout_toRightOf="@id/lbl_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price"
+                />
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/btn_delete_product"
+                app:icon="@mipmap/baseline_delete_white_24dp"
+                app:fabSize="normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tint="@drawable/header_item"
+                android:layout_below="@id/content_lbl_price"
+                android:layout_alignParentRight="true"
+                android:backgroundTint="@color/colorAccent"
+                android:layout_marginRight="@dimen/fab_margin"
+                android:text="Delete"
+                />
+        </RelativeLayout>
+
+    </android.support.design.card.MaterialCardView>
+</RelativeLayout>
