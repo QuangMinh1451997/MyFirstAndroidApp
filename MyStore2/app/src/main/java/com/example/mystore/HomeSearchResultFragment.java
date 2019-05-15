@@ -9,9 +9,9 @@ import android.view.ViewGroup;
 import android.widget.GridView;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 import adapters.ProductsAdapter;
+import database.MyDatabaseHelper;
 import models.Product;
 
 public class HomeSearchResultFragment extends Fragment {
@@ -34,17 +34,10 @@ public class HomeSearchResultFragment extends Fragment {
 
 
     private void updateList(ArrayList<Product> list){
-        Random rd = new Random();
-        for (int i = 0; i < 10; i++){
-            list.add(
-                    new Product(
-                            "Tivi " + (i + 1),
-                            rd.nextInt(50)*200,
-                            rd.nextInt(50)*200,
-                            rd.nextInt(50)*200,
-                            rd.nextInt(50)*200,
-                            "Siêu phẩm đó mấy ba. mua lẹ đi còn kịp" + rd.nextInt(1)*200
-                    ));
-        }
+
+        MyDatabaseHelper db = new MyDatabaseHelper(this.getContext());
+        db.createDefaultNotesIfNeed();
+
+        list.addAll(db.getAllProduct());
     }
 }

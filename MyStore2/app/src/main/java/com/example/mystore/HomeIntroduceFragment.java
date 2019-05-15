@@ -11,7 +11,7 @@ import android.widget.GridView;
 import java.util.ArrayList;
 
 import adapters.ProductsAdapter;
-import models.Constant;
+import database.MyDatabaseHelper;
 import models.Product;
 import models.ProductSearchModel;
 
@@ -25,7 +25,9 @@ public class HomeIntroduceFragment extends Fragment {
         View view= inflater.inflate(R.layout.fragment_home_introduce, container, false);
 
         listView = (GridView) view.findViewById(R.id.productGridView);
-        ArrayList<Product> list = Constant.PRODUCTS;
+//        ArrayList<Product> list = Constant.PRODUCTS;
+        ArrayList<Product> list = new ArrayList<Product>();
+        updateList(list);
 
         mAdapter = new ProductsAdapter(getContext(),list);
         listView.setAdapter(mAdapter);
@@ -33,6 +35,12 @@ public class HomeIntroduceFragment extends Fragment {
         return view;
     }
 
+    private void updateList(ArrayList<Product> list){
 
+        MyDatabaseHelper db = new MyDatabaseHelper(this.getContext());
+        db.createDefaultNotesIfNeed();
+
+        list.addAll(db.getAllProduct());
+    }
 
 }

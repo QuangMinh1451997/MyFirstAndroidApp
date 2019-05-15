@@ -35,6 +35,8 @@ public class CartAdapter  extends BaseAdapter {
 
     }
 
+
+
     @Override
     public int getCount() {
         return list.size();

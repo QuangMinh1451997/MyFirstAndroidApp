@@ -19,6 +19,8 @@ public class Product {
     private int salePercent;
     private String description;
 
+    public Product(){}
+
     public Product(String name, double price, double promotionPrice, int amount, int salePercent, String description) {
         this.name = name;
         this.price = price;

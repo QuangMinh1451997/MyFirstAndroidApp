@@ -15,7 +15,6 @@ import java.util.List;
 
 import models.Product;
 
-
 public class ProductsAdapter extends BaseAdapter {
 
 
@@ -28,6 +27,7 @@ public class ProductsAdapter extends BaseAdapter {
         this.listData = listData;
         layoutInflater = LayoutInflater.from(aContext);
     }
+
 
     @Override
     public int getCount() {
